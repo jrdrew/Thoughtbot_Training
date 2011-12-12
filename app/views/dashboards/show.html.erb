@@ -1,0 +1,25 @@
+Welcome <%= current_user.email %>
+
+<%= form_for(@post) do |post_form| %>
+    <% if @post.errors.present? %>
+	   <%= @post.errors.full_messages.join(", ") %>
+	<% end %>
+    <%= post_form.text_field :body %>
+	<%= post_form.submit "Create!" %>
+<% end %>
+
+<%= form_for(@photo) do |photo_form| %>
+    <% if @photo.errors.present? %>
+       <%= @photo.errors.full_messages.join(", ") %>
+    <% end %>
+    <%= photo_form.text_field :body %>
+    <%= photo_form.submit "Create!" %>
+<% end %>
+
+<ul>
+	
+<% @updates.each do |update| %>
+    <li><%= update.content.body %></li>
+<% end %>
+
+</ul>

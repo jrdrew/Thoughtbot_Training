@@ -12,14 +12,12 @@ Welcome <%= current_user.email %>
     <% if @photo.errors.present? %>
        <%= @photo.errors.full_messages.join(", ") %>
     <% end %>
-    <%= photo_form.text_field :body %>
-    <%= photo_form.submit "Create!" %>
+    <%= photo_form.file_field :attachment_one %>
+    <%= photo_form.submit "Upload Photo!" %>
 <% end %>
 
 <ul>
 	
-<% @updates.each do |update| %>
-    <li><%= update.content.body %></li>
-<% end %>
+<%= render @updates %>
 
 </ul>

@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   def create
-    @photo = Photo.new(params[:post])
+    @photo = Photo.new(params[:photo])
     @update = current_user.updates.build(content: @photo)
     if @update.save
       redirect_to dashboard_path

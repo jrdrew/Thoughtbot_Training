@@ -33,6 +33,10 @@ gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails'
+    gem "ZenTest"
+  gem "autotest-rails"
+  gem 'rspec'
+  gem 'factory_girl_rails'
 end
 
 group :test do

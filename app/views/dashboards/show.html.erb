@@ -1,4 +1,5 @@
-Welcome <%= current_user.email %>
+<section>
+	<h2>Welcome <%= current_user.email %></h2>
 
 <%= form_for(@post) do |post_form| %>
     <% if @post.errors.present? %>
@@ -21,3 +22,5 @@ Welcome <%= current_user.email %>
 <%= render @updates %>
 
 </ul>
+
+</section>

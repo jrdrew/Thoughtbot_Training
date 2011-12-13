@@ -1,0 +1,11 @@
+<section>
+    <h2>Welcome <%= current_user.email %></h2>
+	
+<%= form_tag(search_path, :method => :GET) do %>
+    <%= text_field_tag :q %>
+    <%= submit_tag "Search" %>
+<% end %>
+
+<%= render @updates %>
+	
+</section>

@@ -1,10 +1,5 @@
 <section>
 	<h2>Welcome <%= current_user.email %></h2>
-	
-<%= form_tag(search_path, :method => :GET) do %>
-    <%= text_field_tag :q %>
-	<%= submit_tag "Search" %>
-<% end %>
 
 <%= form_for(@post) do |post_form| %>
     <% if @post.errors.present? %>

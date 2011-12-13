@@ -1,15 +1,16 @@
 class Feed
-  def self.my_feed(user)
-    user.updates.most_recent
+  
+  def initialize(user_ids)
+    @user_ids = user_ids
   end
   
-  def self.friends_feed(user)
-    user.friends.inject([]) {|updates, friend| updates += friend.updates.most_recent}
+  def updates
+    Update.where(:user_id => @user_ids).most_recent
   end
   
-  def self.user_and_friends_feed(user)
-    feed = my_feed(user) + friends_feed(user)
-    feed.sort! { |a, b| b.created_at <=> a.created_at }
+  def search(input)
+    feed = Update.joins("JOIN posts ON updates.content_type = 'Post' AND updates.content_id = posts.id").where("posts.body LIKE ?", "%#{input}%").most_recent
+#    Post.search(input).map(&:update)
   end
     
 end

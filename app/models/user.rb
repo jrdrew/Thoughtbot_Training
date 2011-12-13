@@ -10,8 +10,6 @@ class User < ActiveRecord::Base
     !self_and_friend_ids.include?(user.id)
   end
   
-  private
-  
   def self_and_friend_ids
     friend_ids + [id]
   end

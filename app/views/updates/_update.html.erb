@@ -1,1 +1,5 @@
-<li><%= render update.content %></li>
+<li>
+	<div class="update"><%= render update.content %></div>
+    <div class="poster">Posted by: <%= render update.user %></div>
+    <div class="time"><%= time_ago_in_words(update.created_at) %> ago</div>
+</li>

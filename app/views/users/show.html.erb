@@ -1,0 +1,9 @@
+<section>
+    <h1>Welcome <%= @user.email %>'s email</h1>
+    <% if can_follow?(@user) %>
+        <%= link_to "Follow", user_friendships_path(@user), method: :post %>
+    <% end %>
+    <ul>
+        <%= render @updates %>
+    </ul>
+</section>

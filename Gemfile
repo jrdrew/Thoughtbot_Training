@@ -37,9 +37,11 @@ group :development, :test do
   gem "autotest-rails"
   gem 'rspec'
   gem 'factory_girl_rails'
+  gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
 group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
+  
 end
